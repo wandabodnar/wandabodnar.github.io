@@ -2,20 +2,39 @@
 <html lang="en">
 
 <head>
-  <title></title>
+  <title>Wanda Bodnar</title>
+  
   <!-- Author: Wanda Bodnar -->
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-</script>
 
   <style>
-  </style>
+  .body {
+        margin: 0px;
+        padding: 0px;
+    }
 
+    div#root {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+    }
+
+    div#root > iframe {
+        display: block;
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+  </style>
+  
 </head>
 
 <body>
 
-  <div>
+  <div id="root">
+    <iframe src="https://wandabodnar.netlify.app/" width="100%"></iframe>
   </div>
 
 </body>
