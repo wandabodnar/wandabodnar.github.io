@@ -74,6 +74,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<link rel="alternate" hreflang="en" href="https://wandabodnar.github.io/research.html">
+<link rel="alternate" hreflang="hu" href="https://wandabodnar.github.io/research.hu.html">
+<link rel="alternate" hreflang="x-default" href="https://wandabodnar.github.io/research.html">
 
 
 <link rel="stylesheet" href="styles.css">
@@ -116,6 +119,13 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Portfolio</span></a>
   </li>  
 </ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.hu.html"> <i class="bi bi-globe" role="img">
+</i> 
+<span class="menu-text">Magyar</span></a>
+  </li>  
+</ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
 </div>
@@ -151,6 +161,7 @@ ul.task-list li input[type="checkbox"] {
 
 <p>My PhD focuses on fish community responses to intertidal habitat condition and restoration across the Thames Estuary.</p>
 <p>Further information about my PhD project, research objectives, methodology and progress is available on my dedicated research website.</p>
+<p><a href="https://wandabodnar.github.io/phd/" class="btn btn-outline-primary">Visit my PhD research website</a></p>
 <section id="research-affiliations" class="level3">
 <h3 class="anchored" data-anchor-id="research-affiliations">Research affiliations</h3>
 <div class="affiliation-grid">
@@ -158,12 +169,62 @@ ul.task-list li input[type="checkbox"] {
 <p><a class="affiliation-card" href="https://www.zsl.org/about-zsl/our-people/wanda-bodnar" target="_blank"> <i class="bi bi-building"></i> <strong>ZSL</strong> <span>Institute of Zoology</span> </a></p>
 <p><a class="affiliation-card" href="https://profiles.ucl.ac.uk/100291-wanda-bodnar" target="_blank"> <i class="bi bi-building"></i> <strong>UCL</strong> <span>University College London</span> </a></p>
 </div>
-<p><a href="https://wandabodnar.github.io/phd/">Visit my PhD research website</a></p>
 
 
 </section>
 
 </main> <!-- /main -->
+<script>
+(() => {
+  function configureLanguageMenu() {
+    const pages = {
+      index: ["About", "Bemutatkozás"],
+      research: ["Research", "Kutatás"],
+      talks: ["Public talks", "Előadások"],
+      portfolio: ["Portfolio", "Portfólió"]
+    };
+    const file = location.pathname.split("/").pop() || "index.html";
+    const match = file.match(/^(index|research|talks|portfolio)(\.hu)?(?:\.html)?$/);
+    if (!match) return;
+    const current = match[1];
+    const hungarian = !!match[2];
+    const navbar = document.querySelector("#quarto-header .navbar");
+    if (!navbar) return;
+    const links = [...navbar.querySelectorAll("a.nav-link[href]")];
+    // Find the language link before changing any navigation links.
+    const switcher = links.find(a => a.querySelector(".menu-text")?.textContent.trim() === "Magyar");
+    function setLink(a, label, target, active) {
+      const text = a.querySelector(".menu-text");
+      if (text) text.textContent = label;
+      else a.textContent = label;
+      a.setAttribute("href", target);
+      a.removeAttribute("data-original-href");
+      a.classList.toggle("active", active);
+      if (active) a.setAttribute("aria-current", "page");
+      else a.removeAttribute("aria-current");
+    }
+    for (const a of links) {
+      if (a === switcher) continue;
+      const target = new URL(a.href, location.href).pathname.split("/").pop() || "index.html";
+      const m = target.match(/^(index|research|talks|portfolio)(?:\.hu)?\.html$/);
+      if (!m) continue;
+      const key = m[1];
+      setLink(a, pages[key][hungarian ? 1 : 0], key + (hungarian ? ".hu.html" : ".html"), key === current);
+    }
+    if (switcher) {
+      setLink(switcher, hungarian ? "English" : "Magyar", current + (hungarian ? ".html" : ".hu.html"), false);
+      switcher.setAttribute("lang", hungarian ? "en" : "hu");
+      switcher.setAttribute("hreflang", hungarian ? "en" : "hu");
+      switcher.setAttribute("aria-label", hungarian ? "Switch to English" : "Váltás magyar nyelvre");
+    }
+  }
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", configureLanguageMenu, { once: true });
+  } else {
+    configureLanguageMenu();
+  }
+})();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -572,6 +633,7 @@ ul.task-list li input[type="checkbox"] {
     </div>   
     <div class="nav-footer-center">
 <p>© 2026 Wanda Bodnar</p>
+<p>Built with <a href="https://quarto.org/">Quarto</a> | Hosted on <a href="https://pages.github.com/">GitHub Pages</a></p>
 </div>
     <div class="nav-footer-right">
       &nbsp;

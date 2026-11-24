@@ -120,13 +120,16 @@ a:hover {
    FOOTER
    ================================================== */
 
+/* Footer spacing */
+
 .nav-footer {
-  background-color: var(--marine-blue);
-  color: white;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
-.nav-footer a {
-  color: white;
+.nav-footer p {
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 

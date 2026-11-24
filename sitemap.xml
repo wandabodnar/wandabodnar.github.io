@@ -1,19 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://wandabodnar.github.io/talks.html</loc>
-    <lastmod>2026-11-24T10:12:10.952Z</lastmod>
+    <loc>https://wandabodnar.github.io/portfolio.hu.html</loc>
+    <lastmod>2026-11-24T10:53:00.273Z</lastmod>
+  </url>
+  <url>
+    <loc>https://wandabodnar.github.io/research.hu.html</loc>
+    <lastmod>2026-11-24T11:31:20.274Z</lastmod>
   </url>
   <url>
     <loc>https://wandabodnar.github.io/portfolio.html</loc>
-    <lastmod>2026-11-24T09:47:41.553Z</lastmod>
-  </url>
-  <url>
-    <loc>https://wandabodnar.github.io/index.html</loc>
-    <lastmod>2026-11-24T10:09:46.963Z</lastmod>
+    <lastmod>2026-11-24T10:51:15.251Z</lastmod>
   </url>
   <url>
     <loc>https://wandabodnar.github.io/research.html</loc>
-    <lastmod>2026-11-24T09:47:41.473Z</lastmod>
+    <lastmod>2026-11-24T11:25:42.165Z</lastmod>
+  </url>
+  <url>
+    <loc>https://wandabodnar.github.io/index.html</loc>
+    <lastmod>2026-11-24T10:50:37.688Z</lastmod>
+  </url>
+  <url>
+    <loc>https://wandabodnar.github.io/talks.html</loc>
+    <lastmod>2026-11-24T11:25:10.267Z</lastmod>
+  </url>
+  <url>
+    <loc>https://wandabodnar.github.io/index.hu.html</loc>
+    <lastmod>2026-11-24T11:30:18.409Z</lastmod>
+  </url>
+  <url>
+    <loc>https://wandabodnar.github.io/talks.hu.html</loc>
+    <lastmod>2026-11-24T11:32:58.829Z</lastmod>
   </url>
 </urlset>

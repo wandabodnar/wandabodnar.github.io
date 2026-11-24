@@ -73,6 +73,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<link rel="alternate" hreflang="en" href="https://wandabodnar.github.io/">
+<link rel="alternate" hreflang="hu" href="https://wandabodnar.github.io/index.hu.html">
+<link rel="alternate" hreflang="x-default" href="https://wandabodnar.github.io/">
 
 
 <link rel="stylesheet" href="styles.css">
@@ -113,6 +116,13 @@ ul.task-list li input[type="checkbox"] {
   <li class="nav-item">
     <a class="nav-link" href="./portfolio.html"> 
 <span class="menu-text">Portfolio</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.hu.html"> <i class="bi bi-globe" role="img">
+</i> 
+<span class="menu-text">Magyar</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -193,6 +203,57 @@ ul.task-list li input[type="checkbox"] {
 </main></div>
 </div>
  <!-- /main -->
+<script>
+(() => {
+  function configureLanguageMenu() {
+    const pages = {
+      index: ["About", "Bemutatkozás"],
+      research: ["Research", "Kutatás"],
+      talks: ["Public talks", "Előadások"],
+      portfolio: ["Portfolio", "Portfólió"]
+    };
+    const file = location.pathname.split("/").pop() || "index.html";
+    const match = file.match(/^(index|research|talks|portfolio)(\.hu)?(?:\.html)?$/);
+    if (!match) return;
+    const current = match[1];
+    const hungarian = !!match[2];
+    const navbar = document.querySelector("#quarto-header .navbar");
+    if (!navbar) return;
+    const links = [...navbar.querySelectorAll("a.nav-link[href]")];
+    // Find the language link before changing any navigation links.
+    const switcher = links.find(a => a.querySelector(".menu-text")?.textContent.trim() === "Magyar");
+    function setLink(a, label, target, active) {
+      const text = a.querySelector(".menu-text");
+      if (text) text.textContent = label;
+      else a.textContent = label;
+      a.setAttribute("href", target);
+      a.removeAttribute("data-original-href");
+      a.classList.toggle("active", active);
+      if (active) a.setAttribute("aria-current", "page");
+      else a.removeAttribute("aria-current");
+    }
+    for (const a of links) {
+      if (a === switcher) continue;
+      const target = new URL(a.href, location.href).pathname.split("/").pop() || "index.html";
+      const m = target.match(/^(index|research|talks|portfolio)(?:\.hu)?\.html$/);
+      if (!m) continue;
+      const key = m[1];
+      setLink(a, pages[key][hungarian ? 1 : 0], key + (hungarian ? ".hu.html" : ".html"), key === current);
+    }
+    if (switcher) {
+      setLink(switcher, hungarian ? "English" : "Magyar", current + (hungarian ? ".html" : ".hu.html"), false);
+      switcher.setAttribute("lang", hungarian ? "en" : "hu");
+      switcher.setAttribute("hreflang", hungarian ? "en" : "hu");
+      switcher.setAttribute("aria-label", hungarian ? "Switch to English" : "Váltás magyar nyelvre");
+    }
+  }
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", configureLanguageMenu, { once: true });
+  } else {
+    configureLanguageMenu();
+  }
+})();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const isCodeAnnotation = (el) => {
@@ -594,6 +655,7 @@ ul.task-list li input[type="checkbox"] {
     </div>   
     <div class="nav-footer-center">
 <p>© 2026 Wanda Bodnar</p>
+<p>Built with <a href="https://quarto.org/">Quarto</a> | Hosted on <a href="https://pages.github.com/">GitHub Pages</a></p>
 </div>
     <div class="nav-footer-right">
       &nbsp;
