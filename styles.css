@@ -1,1 +1,170 @@
-/* css styles */
+/* Website colour palette */
+
+:root {
+  --marine-blue: #173E4D;
+}
+
+/* Main background and text */
+
+body {
+  background-color: #FFFFFF;
+  color: #333333;
+}
+
+/* All headings */
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--marine-blue);
+}
+
+/* Subtitle */
+
+.subtitle {
+  color: var(--marine-blue);
+}
+
+/* Hyperlinks */
+
+a {
+  color: var(--marine-blue);
+}
+
+a:hover {
+  color: #32758C;
+}
+
+/* Navigation bar */
+
+.navbar {
+  background-color: var(--marine-blue);
+}
+
+/* Footer */
+
+.nav-footer {
+  background-color: var(--marine-blue);
+  color: white;
+}
+
+/* Profile and social links */
+
+.about-link {
+  color: var(--marine-blue) !important;
+  border-color: var(--marine-blue) !important;
+}
+
+/* Portfolio layout */
+
+.portfolio-grid {
+  column-count: 3;
+  column-gap: 20px;
+}
+
+/* Portfolio cards */
+
+.portfolio-card {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 20px;
+  break-inside: avoid;
+  background-color: #173E4D;
+  border-radius: 6px;
+  overflow: hidden;
+  text-decoration: none;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease;
+}
+
+/* Portfolio images */
+
+.portfolio-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Portfolio titles */
+
+.portfolio-card h3 {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 20px;
+  margin: 0;
+}
+
+/* Hover effect */
+
+.portfolio-card:hover {
+  transform: translateY(-4px);
+  text-decoration: none;
+  background-color: #245568;
+}
+
+/* Tablet layout */
+
+@media (max-width: 992px) {
+  .portfolio-grid {
+    column-count: 2;
+  }
+}
+
+/* Mobile layout */
+
+@media (max-width: 576px) {
+  .portfolio-grid {
+    column-count: 1;
+  }
+}
+
+/* Research affiliation cards */
+
+.affiliation-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.affiliation-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px 15px;
+  border: 1px solid #173E4D;
+  border-radius: 6px;
+  color: #173E4D;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.affiliation-card i {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.affiliation-card strong {
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+}
+
+.affiliation-card span {
+  font-size: 0.85rem;
+}
+
+.affiliation-card:hover {
+  background-color: #173E4D;
+  color: white;
+  text-decoration: none;
+  transform: translateY(-3px);
+}
+
+/* Mobile layout */
+
+@media (max-width: 600px) {
+  .affiliation-grid {
+    grid-template-columns: 1fr;
+  }
+}
