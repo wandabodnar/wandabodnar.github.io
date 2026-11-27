@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="#173e4d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><style>.accent{stroke:#438d89}</style>
+<path d="M5 16 20 9l16 8 22-8v37l-22 8-16-8-15 8V16Z"/>
+<path d="M20 9v37M36 17v37"/>
+<path class="accent" d="M9 33c3-8 8-8 11-5s9 6 16 0 13-5 18 0M9 40c4-7 8-7 11-4s10 6 16-1 12-5 18-1" stroke-dasharray="3 3"/>
+<path d="M44 5a10 10 0 0 0-10 10c0 7 10 15 10 15s10-8 10-15A10 10 0 0 0 44 5Z" fill="#eef6f3"/>
+<circle cx="44" cy="15" r="3.4" fill="#74a9a3" stroke="none"/>
+</svg>
