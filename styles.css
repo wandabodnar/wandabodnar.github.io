@@ -418,3 +418,137 @@ html[lang="hu"] .hero h1 { max-width:19ch; font-size:clamp(1.75rem,3.2vw,var(--p
   .profile-hero-photo { width: 120px; height: 120px; }
   .profile-social { justify-content: center; }
 }
+
+/* FOOTER ------------------------------------------------- */
+
+footer.footer {
+  background: #102F3A;
+}
+
+/* Compact two-row layout */
+
+footer.footer .nav-footer {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    "copyright social"
+    "credits credits";
+
+  align-items: center;
+  gap: 2px 12px;
+  max-width: var(--site-width);
+  margin: 0 auto;
+  padding: 5px 12px;
+  min-height: 0;
+  color: #eaf6f3;
+  font-size: 0.85rem;
+}
+
+.nav-footer p {
+  margin: 0;
+}
+
+/* Copyright and fish icon */
+
+.nav-footer .nav-footer-left {
+  grid-area: copyright;
+  text-align: left;
+  margin: 0;
+}
+
+.nav-footer-left p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-footer-left p::before {
+  content: "";
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  background: url("images/icons/fish-mark.svg")
+              center / contain no-repeat;
+}
+
+/* Social media icons */
+
+.nav-footer .nav-footer-center {
+  grid-area: social;
+  text-align: right;
+  margin: 0;
+  min-height: 0;
+}
+
+.nav-footer-center .footer-items {
+  font-size: 1.15rem;
+  padding: 0;
+  margin: 0;
+}
+
+/* Website credits */
+
+.nav-footer .nav-footer-right {
+  grid-area: credits;
+  margin: 0;
+  padding: 0;
+  border: none;
+  text-align: center;
+  font-size: 0.75rem;
+}
+
+/* Link colours */
+
+.nav-footer a {
+  color: #e0f4ef;
+}
+
+.nav-footer a:hover {
+  color: #87C3B9;
+}
+
+/* Mobile layout */
+
+@media (max-width: 480px) {
+  footer.footer .nav-footer {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "copyright"
+      "social"
+      "credits";
+  }
+
+  .nav-footer-left p {
+    justify-content: center;
+  }
+
+  .nav-footer .nav-footer-center {
+    text-align: center;
+  }
+}
+
+/* Compact single-row footer */
+
+footer.footer .nav-footer {
+  grid-template-columns: 1fr auto;
+  grid-template-areas: "copyright social";
+  padding: 3px 12px;
+  gap: 0;
+  min-height: 0;
+}
+
+.nav-footer .nav-footer-right {
+  display: none;
+}
+
+.nav-footer-center .footer-items .nav-link {
+  padding: 2px 6px;
+}
+
+.nav-footer-left p {
+  margin: 0;
+}
+
+#quarto-content main#quarto-document-content {
+  padding-bottom: 1.25rem;
+}
